@@ -21,7 +21,7 @@
 </head>
 <body>
     @include('components.nav')
-
+    
     @yield('content')
 
     @include('components.footer')

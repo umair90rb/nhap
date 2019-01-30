@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark black mb-4 scrolling-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{ config('app.name') }}
