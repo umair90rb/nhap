@@ -1,15 +1,5 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,3 +8,12 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('/hostel', 'HostelController');
+
+Route::post('/getCity', function(Request $request){
+    return App\City::where('state_id', $request->input('id'))->get();
+})->name('getCity');
+Route::post('/getArea', function(Request $request){
+    return App\Area::where('city_id', $request->input('id'))->get();
+})->name('getArea');

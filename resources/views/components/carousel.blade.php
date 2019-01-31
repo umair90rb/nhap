@@ -21,36 +21,9 @@
                         <div class="card text-white bg-light h-100">
                                 <div class="card-header text-dark">News and Update</div>
                                 <div class="card-body">
-                                    <div class='myclass' style="overflow:auto">
-                                        <ul>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                           <li>some content</li>
-                                        </ul>
-                                     </div>                                     
+                                                                         
                                 </div>
                             </div>
                 </div>
             </div>
 </div>
-<script>
-$('.myclass').vTicker();
-</script>

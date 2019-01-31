@@ -13,6 +13,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/') }}">{{ 'Home' }}</a>
                 </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">Registration</a>
+                    <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('hostel.create') }}">Register as Member</a>
+                        <a class="dropdown-item" href="#">Register Hostel</a>
+                    </div>
+                </li>
             </ul>
 
             <!-- Right Side Of Navbar -->
