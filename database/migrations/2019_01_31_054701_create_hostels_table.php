@@ -13,10 +13,13 @@ class CreateHostelsTable extends Migration
      */
     public function up()
     {
-        // Schema::create('hostels', function (Blueprint $table) {
-        //     $table->increments('id');
-        //     $table->timestamps();
-        // });
+        Schema::create('hostels', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nhap_registration_no');
+            $table->string('name');
+            $table->unsignedSmallInteger('area_id');
+            $table->timestamps();
+        });
     }
 
     /**

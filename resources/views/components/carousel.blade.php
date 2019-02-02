@@ -8,7 +8,7 @@
                         <div class="carousel-inner" role="listbox">
                         <div class="carousel-item active">
                             <video class="video-fluid" autoplay loop muted>
-                                <source src="{{ asset('images/nhap.mp4') }}" type="video/mp4" />
+                                <source src="{{ asset('videos/nhap.mp4') }}" type="video/mp4" />
                             </video>
                         </div>
                         </div>
