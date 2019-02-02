@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Hostel Registration') }}</div>
+                <div class="card-header">{{ __('Member Registration') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('hostel.store') }}">
+                    <form method="POST" action="{{ route('member.store') }}">
                         @csrf
 
                         
@@ -62,7 +62,7 @@
                             <label for="referlCnic" class="col-md-4 col-form-label text-md-right">{{ __('Referal CNIC') }}</label>
 
                             <div class="col-md-6">
-                                <input id="referlCnic" type="text" class="form-control{{ $errors->has('referlCnic') ? ' is-invalid' : '' }}" name="referlCnic" required>
+                                <input id="referlCnic" type="text" class="form-control{{ $errors->has('referlCnic') ? ' is-invalid' : '' }}" name="referalCnic" value="{{ old('referalCnic') }}" required>
 
                                 @if ($errors->has('referlCnic'))
                                     <span class="invalid-feedback" role="alert">
@@ -76,10 +76,15 @@
                             <label for="transactionDetail" class="col-md-4 col-form-label text-md-right">{{ __('Transaction Detail') }}</label>
 
                             <div class="col-md-6">
-                                <input id="transactionDetail" type="text" placeholder="Enter your transaction detail" class="form-control" name="transactionDetail" required>
+                                <input id="transactionDetail" type="text" placeholder="Enter your transaction detail" class="form-control" name="transactionDetail" value="{{ old('transactionDetail') }}" required>
                                 <small id="helpBlock" class="form-text text-muted">
                                     *Easypaisa*Sender Mobile No*Transaction Id*Ammount#
                                 </small>
+                                @if ($errors->has('transactionDetail'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('transactionDetail') }}</strong>
+                                    </span>
+                                @endif
                             </div>
                         </div>
 
@@ -103,8 +108,13 @@
                                 <label for="termsAndCondition" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
                                 <div class="col-md-6">
                                 <div class="custom-control custom-checkbox my-1 mr-sm-2">
-                                    <input type="checkbox" class="custom-control-input" id="termsAndCondition">
+                                    <input type="checkbox" class="custom-control-input" name="termsAndCondition" id="termsAndCondition">
                                     <label class="custom-control-label" for="termsAndCondition">Accept Terms and Condition</label>
+                                    @if ($errors->has('termsAndCondition'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{  $errors->first('termsAndCondition') }}</strong>
+                                    </span>
+                                @endif
                                 </div>
                             </div>
                         </div>
@@ -173,7 +183,7 @@
       </div>
       <div class="modal-footer d-flex justify-content-center">
         <button class="btn btn-default " data-dismiss="modal" aria-label="Close" id="getData">Get Registration No</button>
-      <a class="btn btn-default " href="{{ url('/') }}" >Register Hostel</a>
+      <a class="btn btn-default " href="{{ route('hostel.create') }}" >Register Hostel</a>
       </div>
     </div>
   </div>
@@ -181,8 +191,11 @@
 
 @endsection
 @section('script')
+<script src="{{ asset('js/mask.js') }}" type="text/javascript"></script>
     <script>
+
         $(document).ready(function () {
+
 
             $('.dynamic').change(function(){
                 console.log(this.val);
@@ -277,9 +290,6 @@
                 $('#regButton').attr('disabled', 'disabled');
                 }
             });
-
-            
-
         });
     </script>
 @endsection

@@ -10,6 +10,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('/hostel', 'HostelController');
+Route::resource('/member', 'MemberController');
 
 Route::post('/getCity', function(Request $request){
     return App\City::where('state_id', $request->input('id'))->get();

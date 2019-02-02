@@ -18,8 +18,8 @@
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                     aria-expanded="false">Registration</a>
                     <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="{{ route('hostel.create') }}">Register as Member</a>
-                        <a class="dropdown-item" href="#">Register Hostel</a>
+                    <a class="dropdown-item" href="{{ route('member.create') }}">Register as Member</a>
+                        <a class="dropdown-item" href="{{ route('hostel.create') }}">Register Hostel</a>
                     </div>
                 </li>
             </ul>
