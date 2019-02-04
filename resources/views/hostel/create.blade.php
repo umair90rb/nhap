@@ -13,19 +13,58 @@
 
                         
 
+                        
+
                         <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('Select State') }}</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
+                                @include('injects/states')    
+                                @if ($errors->has('state'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('state') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
+                        <div class="form-group row">
+                            <label for="city" class="col-md-4 col-form-label text-md-right">{{ __('Select City') }}</label>
+
+                            <div class="col-md-6">
+                                @include('injects/cities')    
+                                @if ($errors->has('city'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="area" class="col-md-4 col-form-label text-md-right">{{ __('Select Area') }}</label>
+
+                            <div class="col-md-6">
+                                @include('injects/areas')    
+                                @if ($errors->has('area'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('area') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                                <label for="ownerName" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Owner Name') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="ownerName" type="text" class="form-control{{ $errors->has('ownerName') ? ' is-invalid' : '' }}" name="ownerName" value="{{ old('ownerName') }}" required autofocus>
+    
+                                    @if ($errors->has('ownerName'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('ownerName') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
 
                         <div class="form-group row">
                             <label for="cnic" class="col-md-4 col-form-label text-md-right">{{ __('CNIC No') }}</label>
@@ -59,41 +98,65 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="referlCnic" class="col-md-4 col-form-label text-md-right">{{ __('Referal CNIC') }}</label>
+                            <label for="hostelRoms" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Roms') }}</label>
 
                             <div class="col-md-6">
-                                <input id="referlCnic" type="text" class="form-control{{ $errors->has('referlCnic') ? ' is-invalid' : '' }}" name="referlCnic" required>
+                                <input id="hostelRoms" type="text" class="form-control{{ $errors->has('hostelRoms') ? ' is-invalid' : '' }}" name="hostelRoms" required>
 
-                                @if ($errors->has('referlCnic'))
+                                @if ($errors->has('hostelRoms'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('referlCnic') }}</strong>
+                                        <strong>{{ $errors->first('hostelRoms') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <label for="hostelCapacity" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Capacity') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="hostelCapacity" type="text" class="form-control{{ $errors->has('hostelCapacity') ? ' is-invalid' : '' }}" name="hostelCapacity" required>
+
+                                @if ($errors->has('hostelCapacity'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelCapacity') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="transactionDetail" class="col-md-4 col-form-label text-md-right">{{ __('Transaction Detail') }}</label>
+                            <label for="transactionDetail" class="col-md-4 col-form-label text-md-right">{{ __('Hostel For') }}</label>
 
                             <div class="col-md-6">
-                                <input id="transactionDetail" type="text" placeholder="Enter your transaction detail" class="form-control" name="transactionDetail" required>
-                                <small id="helpBlock" class="form-text text-muted">
-                                    *Easypaisa*Sender Mobile No*Transaction Id*Ammount#
-                                </small>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="hostelFor" id="inlineRadio1" value="boys">
+                                        <label class="form-check-label" for="inlineRadio1">Boys</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="hostelFor" id="inlineRadio2" value="Girls">
+                                        <label class="form-check-label" for="inlineRadio2">Girls</label>
+                                    </div>
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="hostelRegistrationNo" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Registration No') }}</label>
+                            <label for="hostelType" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Type') }}</label>
                             
                             <div class="col-md-6">
-                                <input id="hostelRegistrationNo" type="text" placeholder="Enter your hostel registration no" class="form-control{{ $errors->has('hostelRegistrationNo') ? ' is-invalid' : '' }}" name="hostelRegistrationNo" value="{{ old('hostelRegistrationNo') }}" required autofocus>
-                                <small id="helpBlock" class="form-text text-muted">
-                                    NHAP-AB-123456. If don't know, Search 
-                                </small>
-                                @if ($errors->has('hostelRegistrationNo'))
+                                <select name="city" id="city" class="form-control form-control-sm">
+                                    <option value="">Select Hostel Type</option>
+                                    <option value="">Private Hostel</option>
+                                    <option value="">Govt Hostel</option>
+                                    <option value="">Community Hostel</option>
+                                    <option value="">Doctors Hostel</option>
+                                    <option value="">Nursing Hostel</option>
+                                    <option value="">Working Women Hostel</option>
+                                    <option value="">Other Hostel</option>
+                                </select>
+                                @if ($errors->has('hostelType'))
                                 <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('hostelRegistrationNo') }}</strong>
+                                    <strong>{{ $errors->first('hostelType') }}</strong>
                                 </span>
                                 @endif
                             </div>
@@ -268,7 +331,7 @@
             });
             $('#getData').click(function(){
                 var nhapReg = $('#nhapReg').val();
-                $('#hostelRegistrationNo').val(nhapReg);
+                $('#hostelType').val(nhapReg);
             });
             $('#termsAndCondition').change(function() {
                 if (($('#termsAndCondition').is(':checked'))) {

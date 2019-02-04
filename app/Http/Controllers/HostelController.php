@@ -35,7 +35,26 @@ class HostelController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name'  => 'required',
+            'cnic'  => 'required',
+            'mobileNo'  => 'required',
+            'referalCnic'  => 'required',
+            'transactionDetail'  => 'required',
+            'hostelRegistrationNo'  => 'required',
+            'termsAndCondition' => 'accepted',
+        ]);
+
+        Member::create([
+            'name'  =>  $request->input('name'),
+            'cnic'  =>  $request->input('cnic'),
+            'mobile_no'  =>  $request->input('mobileNo'),
+            'referal_cnic'  =>  $request->input('referalCnic'),
+            'transaction_detail'  =>  $request->input('transactionDetail'),
+            'hostel_registration_no'  =>  $request->input('hostelRegistrationNo'),
+        ]);
+        
+        return back();
     }
 
     /**
