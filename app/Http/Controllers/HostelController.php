@@ -45,7 +45,7 @@ class HostelController extends Controller
             'termsAndCondition' => 'accepted',
         ]);
 
-        Member::create([
+        Hostel::create([
             'name'  =>  $request->input('name'),
             'cnic'  =>  $request->input('cnic'),
             'mobile_no'  =>  $request->input('mobileNo'),

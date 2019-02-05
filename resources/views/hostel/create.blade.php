@@ -143,13 +143,13 @@
                             <div class="col-md-6">
                                 <select name="city" id="city" class="form-control form-control-sm">
                                     <option value="">Select Hostel Type</option>
-                                    <option value="">Private Hostel</option>
-                                    <option value="">Govt Hostel</option>
-                                    <option value="">Community Hostel</option>
-                                    <option value="">Doctors Hostel</option>
-                                    <option value="">Nursing Hostel</option>
-                                    <option value="">Working Women Hostel</option>
-                                    <option value="">Other Hostel</option>
+                                    <option value="Privat Hostel">Private Hostel</option>
+                                    <option value="Govt Hostel">Govt Hostel</option>
+                                    <option value="Community Hostel">Community Hostel</option>
+                                    <option value="Doctors Hostel">Doctors Hostel</option>
+                                    <option value="Nursing Hostel">Nursing Hostel</option>
+                                    <option value="Working Women Hostel">Working Women Hostel</option>
+                                    <option value="Other Hostel">Other Hostel</option>
                                 </select>
                                 @if ($errors->has('hostelType'))
                                 <span class="invalid-feedback" role="alert">
@@ -327,11 +327,11 @@
                             <div class="col-md-6">
                                 <select name="hostelBuilding" id="hostelBuilding" class="form-control form-control-sm">
                                     <option value="">Select Hostel Type</option>
-                                    <option value="">Hostel</option>
-                                    <option value="">House</option>
-                                    <option value="">Apartment</option>
-                                    <option value="">Plaza Type</option>
-                                    <option value="">Rooms for rent</option>
+                                    <option value="Hostel">Hostel</option>
+                                    <option value="House">House</option>
+                                    <option value="Apartment">Apartment</option>
+                                    <option value="Plaza Type">Plaza Type</option>
+                                    <option value="Rooms for Rent">Rooms for Rent</option>
                                 </select>
                                 @if ($errors->has('hostelBuilding'))
                                     <span class="invalid-feedback" role="alert">
@@ -345,7 +345,7 @@
                             <label for="registrationFeeScreenShot" class="col-md-4 col-form-label text-md-right">{{ __('Registrtion Fee Vochure Screenshort') }}</label>
 
                             <div class="col-md-6">
-                                <input id="registrationFeeScreenShot" type="text" class="form-control{{ $errors->has('registrationFeeScreenShot') ? ' is-invalid' : '' }}" name="registrationFeeScreenShot" >
+                                <input id="registrationFeeScreenShot" type="file" class="form-control{{ $errors->has('registrationFeeScreenShot') ? ' is-invalid' : '' }}" name="registrationFeeScreenShot" >
 
                                 @if ($errors->has('registrationFeeScreenShot'))
                                     <span class="invalid-feedback" role="alert">
@@ -370,7 +370,7 @@
                                     {{ __('Register') }}
                                 </button>
                                 <a class="btn btn-link"  data-toggle="modal" data-target="#modalLoginForm">
-                                        {{ __('Find your Hostel') }}
+                                        {{ __('Terms and Condition') }}
                                 </a>
                             </div>
                         </div>
@@ -422,11 +422,7 @@
         $('.cnic').inputmask("99999-9999999-9",{ "placeholder": "    -       - " });
         $('.contact').inputmask("+\\929999999999",{ "placeholder": "+92          " });
         
-        $('form').submit(function(){
-
-            var test = $('.contact').val();
-            alert(test);
-        });
+        
 
 
     });
