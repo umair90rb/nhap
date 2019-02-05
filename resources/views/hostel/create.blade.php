@@ -93,14 +93,14 @@
                         </div>
                         
                         <div class="form-group row">
-                            <label for="hostelRoms" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Roms') }}</label>
+                            <label for="hostelRooms" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Rooms') }}</label>
 
                             <div class="col-md-6">
-                                <input id="hostelRoms" type="text" class="form-control{{ $errors->has('hostelRoms') ? ' is-invalid' : '' }}" name="hostelRoms" >
+                                <input id="hostelRooms" type="text" class="form-control{{ $errors->has('hostelRooms') ? ' is-invalid' : '' }}" name="hostelRooms" >
 
-                                @if ($errors->has('hostelRoms'))
+                                @if ($errors->has('hostelRooms'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('hostelRoms') }}</strong>
+                                        <strong>{{ $errors->first('hostelRooms') }}</strong>
                                     </span>
                                 @endif
                             </div>
@@ -141,10 +141,11 @@
                             <label for="hostelType" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Type') }}</label>
                             
                             <div class="col-md-6">
-                                <select name="city" id="city" class="form-control form-control-sm">
+                                <select name="hostelType" id="hostelType" class="form-control form-control-sm">
                                     <option value="">Select Hostel Type</option>
                                     <option value="Privat Hostel">Private Hostel</option>
                                     <option value="Govt Hostel">Govt Hostel</option>
+                                    <option value="Govt Hostel">Istitution Hostel</option>
                                     <option value="Community Hostel">Community Hostel</option>
                                     <option value="Doctors Hostel">Doctors Hostel</option>
                                     <option value="Nursing Hostel">Nursing Hostel</option>
