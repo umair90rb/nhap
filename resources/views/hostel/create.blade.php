@@ -9,12 +9,7 @@
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('hostel.store') }}">
-                        @csrf
-
-                        
-
-                        
-
+                        @csrf  
                         <div class="form-group row">
                             <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('Select State') }}</label>
 
@@ -56,7 +51,7 @@
                                 <label for="ownerName" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Owner Name') }}</label>
     
                                 <div class="col-md-6">
-                                    <input id="ownerName" type="text" class="form-control{{ $errors->has('ownerName') ? ' is-invalid' : '' }}" name="ownerName" value="{{ old('ownerName') }}" required autofocus>
+                                    <input id="ownerName" type="text" class="form-control{{ $errors->has('ownerName') ? ' is-invalid' : '' }}" name="ownerName" value="{{ old('ownerName') }}"  autofocus>
     
                                     @if ($errors->has('ownerName'))
                                         <span class="invalid-feedback" role="alert">
@@ -67,24 +62,24 @@
                             </div>
 
                         <div class="form-group row">
-                            <label for="cnic" class="col-md-4 col-form-label text-md-right">{{ __('CNIC No') }}</label>
+                            <label for="ownerCnic" class="col-md-4 col-form-label text-md-right">{{ __('Owner CNIC No') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cnic" type="cnic" class="form-control{{ $errors->has('cnic') ? ' is-invalid' : '' }}" name="cnic" onkey="alert('abc')" title="Please enter CNIC e.g 12345-1234567-1" pattern="([0-9]{5}-[0-9]{7}-[0-9]{1})" value="{{ old('cnic') }}" required>
+                                <input id="ownerCnic" type="cnic" class="cnic form-control{{ $errors->has('ownerCnic') ? ' is-invalid' : '' }}" name="ownerCnic"  title="Please enter CNIC e.g 12345-1234567-1" pattern="([0-9]{5}-[0-9]{7}-[0-9]{1})" value="{{ old('ownerCnic') }}" >
 
-                                @if ($errors->has('cnic'))
+                                @if ($errors->has('ownerCnic'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('cnic') }}</strong>
+                                        <strong>{{ $errors->first('ownerCnic') }}</strong>
                                     </span>
                                 @endif
                             </div>
                         </div>
 
                         <div class="form-group row">
-                            <label for="mobileNo" class="col-md-4 col-form-label text-md-right">{{ __('Mobile No') }}</label>
+                            <label for="mobileNo" class="col-md-4 col-form-label text-md-right">{{ __('Owner Mobile No') }}</label>
 
                             <div class="col-md-6">
-                                <input id="mobileNo" type="mobileNo" class="form-control{{ $errors->has('mobileNo') ? ' is-invalid' : '' }}" name="mobileNo"  value="{{ old('mobileNo') }}" required>
+                                <input id="mobileNo" type="mobileNo" class="contact form-control{{ $errors->has('mobileNo') ? ' is-invalid' : '' }}" name="mobileNo"  value="{{ old('mobileNo') }}" >
                                 
                                 <small id="helpBlock" class="form-text text-muted">
                                     Mobile no necessary for verification.
@@ -101,7 +96,7 @@
                             <label for="hostelRoms" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Roms') }}</label>
 
                             <div class="col-md-6">
-                                <input id="hostelRoms" type="text" class="form-control{{ $errors->has('hostelRoms') ? ' is-invalid' : '' }}" name="hostelRoms" required>
+                                <input id="hostelRoms" type="text" class="form-control{{ $errors->has('hostelRoms') ? ' is-invalid' : '' }}" name="hostelRoms" >
 
                                 @if ($errors->has('hostelRoms'))
                                     <span class="invalid-feedback" role="alert">
@@ -115,7 +110,7 @@
                             <label for="hostelCapacity" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Capacity') }}</label>
 
                             <div class="col-md-6">
-                                <input id="hostelCapacity" type="text" class="form-control{{ $errors->has('hostelCapacity') ? ' is-invalid' : '' }}" name="hostelCapacity" required>
+                                <input id="hostelCapacity" type="text" class="form-control{{ $errors->has('hostelCapacity') ? ' is-invalid' : '' }}" name="hostelCapacity" >
 
                                 @if ($errors->has('hostelCapacity'))
                                     <span class="invalid-feedback" role="alert">
@@ -140,6 +135,8 @@
                             </div>
                         </div>
 
+
+                        
                         <div class="form-group row">
                             <label for="hostelType" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Type') }}</label>
                             
@@ -162,6 +159,202 @@
                             </div>
                         </div>
                         
+                        <div class="form-group row">
+                            <label for="hostelName" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Name') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="hostelName" type="text" class="form-control{{ $errors->has('hostelName') ? ' is-invalid' : '' }}" name="hostelName" >
+
+                                @if ($errors->has('hostelName'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelName') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hostelAddress" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Address') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="hostelAddress" type="text" class="form-control{{ $errors->has('hostelAddress') ? ' is-invalid' : '' }}" name="hostelAddress" >
+
+                                @if ($errors->has('hostelAddress'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelAddress') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hostelNumber" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Contact No') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="hostelNumber" type="text" class="contact form-control{{ $errors->has('hostelNumber') ? ' is-invalid' : '' }}" name="hostelNumber" >
+
+                                @if ($errors->has('hostelNumber'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelNumber') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hostelLandline" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Landline No') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="hostelLandline" type="text" class="form-control{{ $errors->has('hostelLandline') ? ' is-invalid' : '' }}" name="hostelLandline" >
+
+                                @if ($errors->has('hostelLandline'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelLandline') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hostelPartner" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Partner') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="hostelPartner" type="text" class="form-control{{ $errors->has('hostelPartner') ? ' is-invalid' : '' }}" name="hostelPartner" >
+
+                                @if ($errors->has('hostelPartner'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelPartner') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div id="hostelPartnerAddon" style="display:none;">
+
+                            <div class="form-group row">
+                                <label for="hostelPartnerContact" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Partner Contact') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="hostelPartnerContact" type="text" class="contact form-control{{ $errors->has('hostelPartnerContact') ? ' is-invalid' : '' }}" name="hostelPartnerContact" >
+    
+                                    @if ($errors->has('hostelPartnerContact'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('hostelPartnerContact') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="hostelPartnerCnic" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Partner CNIC') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="hostelPartnerCnic" type="text" class="cnic form-control{{ $errors->has('hostelPartnerCnic') ? ' is-invalid' : '' }}" name="hostelPartnerCnic" >
+    
+                                    @if ($errors->has('hostelPartnerCnic'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('hostelPartnerCnic') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hostelWarden" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Warden') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="hostelWarden" type="text" class="form-control{{ $errors->has('hostelWarden') ? ' is-invalid' : '' }}" name="hostelWarden" >
+
+                                @if ($errors->has('hostelWarden'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelWarden') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div id="hostelWardenAddon" style="display:none;">
+
+                            <div class="form-group row">
+                                <label for="hostelWardenContact" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Warden Contact') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="hostelWardenContact" type="text" class="contact form-control{{ $errors->has('hostelWardenContact') ? ' is-invalid' : '' }}" name="hostelWardenContact" >
+    
+                                    @if ($errors->has('hostelWardenContact'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('hostelWardenContact') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="hostelWardenCnic" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Warden CNIC') }}</label>
+    
+                                <div class="col-md-6">
+                                    <input id="hostelWardenCnic" type="text" class="cnic form-control{{ $errors->has('hostelWardenCnic') ? ' is-invalid' : '' }}" name="hostelWardenCnic" >
+    
+                                    @if ($errors->has('hostelWardenCnic'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('hostelWardenCnic') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="referalCnic" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Referal CNIC') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="referalCnic" type="text" class="cnic form-control{{ $errors->has('referalCnic') ? ' is-invalid' : '' }}" name="referalCnic" >
+
+                                @if ($errors->has('referalCnic'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('referalCnic') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="hostelBuilding" class="col-md-4 col-form-label text-md-right">{{ __('Hostel Building Type') }}</label>
+
+                            <div class="col-md-6">
+                                <select name="hostelBuilding" id="hostelBuilding" class="form-control form-control-sm">
+                                    <option value="">Select Hostel Type</option>
+                                    <option value="">Hostel</option>
+                                    <option value="">House</option>
+                                    <option value="">Apartment</option>
+                                    <option value="">Plaza Type</option>
+                                    <option value="">Rooms for rent</option>
+                                </select>
+                                @if ($errors->has('hostelBuilding'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('hostelBuilding') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="registrationFeeScreenShot" class="col-md-4 col-form-label text-md-right">{{ __('Registrtion Fee Vochure Screenshort') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="registrationFeeScreenShot" type="text" class="form-control{{ $errors->has('registrationFeeScreenShot') ? ' is-invalid' : '' }}" name="registrationFeeScreenShot" >
+
+                                @if ($errors->has('registrationFeeScreenShot'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('registrationFeeScreenShot') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group row">    
                                 <label for="termsAndCondition" class="col-md-4 col-form-label text-md-right">{{ __('') }}</label>
                                 <div class="col-md-6">
@@ -189,160 +382,53 @@
     </div>
 </div>
 
-<!-- model form -->
 
-<div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Find Your Hostel</h4>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-
-        <div class="row">
-            <div class="col">
-                   @include('injects.states')
-            </div>
-            <div class="col">
-                <select id="city" name="city" class="form-control form-control-sm">
-                    <option value=""> Select City</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col">
-                <select id="area" name="area" class="form-control form-control-sm">
-                    <option value=""> Select Area</option>
-                </select>
-            </div>
-            <div class="col">
-                <select id="hostel" name="hostel" class="form-control form-control-sm">
-                        <option value=""> Select Hostel</option>
-                </select>
-            </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col">
-                <input class="form-control" id="nhapReg" >
-                <small id="nhapRegText" class="form-text text-muted">If cannot find your hostel, please register first.</small>
-            </div>
-        </div>
-      </div>
-      <div class="modal-footer d-flex justify-content-center">
-        <button class="btn btn-default " data-dismiss="modal" aria-label="Close" id="getData">Get Registration No</button>
-      <a class="btn btn-default " href="{{ url('/') }}" >Register Hostel</a>
-      </div>
-    </div>
-  </div>
-</div>
 
 @endsection
 @section('script')
-    <script>
-        $(document).ready(function () {
+<script src="{{ asset('js/mask.js') }}" type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
 
-            $('.dynamic').change(function(){
-                console.log(this.val);
-            });
-
-            $("#state").change(function(){
-                var stateId = $('#state').val();
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },              
-                    url:'{{ route("getCity") }}',
-                    type:'post',
-                    data:{id:stateId},
-                    success:function(cities){
-                        var data = $("#city").html();
-                        var option ='<option value=""> Select City</option>';
-                        if(cities != null){
-                            cities.forEach(city => {
-                           option = option + "<option value="+city.id+">"+ city.name +"</option>";
-                        });
-                        $("#city").html(option);
-                        }
-                    },
-                    error:function(e){
-                        console.log(e);
-                    }
-                });
-            });
-
-            $("#city").change(function(){
-                var stateId = $('#city').val();
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },              
-                    url:'{{ route("getArea") }}',
-                    type:'post',
-                    data:{id:stateId},
-                    success:function(areas){
-                        var data = $("#city").html();
-                        var option ='<option value=""> Select Area</option>';
-                        if(areas != null){
-                            areas.forEach(area => {
-                           option = option + "<option value="+area.id+">"+ area.name +"</option>";
-                        });
-                        $("#area").html(option);
-                        }
-                    },
-                    error:function(e){
-                        console.log(e);
-                    }
-                });
-            });
-
-            $("#area").change(function(){
-                var stateId = $('#area').val();
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },              
-                    url:'{{ route("getHostel") }}',
-                    type:'post',
-                    data:{id:stateId},
-                    success:function(hostels){
-                        var data = $("#city").html();
-                        var option ='<option value=""> Select Hostel</option>';
-                        if(hostels != null){
-                            hostels.forEach(hostel => {
-                           option = option + "<option value="+hostel.nhap_registration_no+">"+ hostel.name +"</option>";
-                        });
-                        $("#hostel").html(option);
-                        }
-                    },
-                    error:function(e){
-                        console.log(e);
-                    }
-                });
-            });
-            $('#hostel').change(function(){
-                var nhapRegistrationNo = $(this).val();
-                $('#nhapReg').val(nhapRegistrationNo);
-            });
-            $('#getData').click(function(){
-                var nhapReg = $('#nhapReg').val();
-                $('#hostelType').val(nhapReg);
-            });
-            $('#termsAndCondition').change(function() {
-                if (($('#termsAndCondition').is(':checked'))) {
-                    $('#regButton').removeAttr('disabled');
-                } else {
+        $('#termsAndCondition').change(function() {
+            if (($('#termsAndCondition').is(':checked'))) {
+                $('#regButton').removeAttr('disabled');
+            } else {
                 $('#regButton').attr('disabled', 'disabled');
-                }
-            });
-
-            
-
+            }
         });
-    </script>
+        
+
+        $('input[name=hostelPartner]').keyup(function(){
+            var hostelPartner = $('input[name=hostelPartner]').val();
+            if(hostelPartner.length >= 1)
+            {
+                $('div[id=hostelPartnerAddon]').fadeIn(500);  
+            } else {
+                $('div[id=hostelPartnerAddon]').fadeOut(250);
+            }
+        });
+
+        $('input[name=hostelWarden]').keyup(function(){
+            var hostelPartner = $('input[name=hostelWarden]').val();
+            if(hostelPartner.length >= 1)
+            {
+                $('div[id=hostelWardenAddon]').fadeIn(500);  
+            } else {
+                $('div[id=hostelWardenAddon]').fadeOut(250);
+            }
+        });
+
+        $('.cnic').inputmask("99999-9999999-9",{ "placeholder": "    -       - " });
+        $('.contact').inputmask("+\\929999999999",{ "placeholder": "+92          " });
+        
+        $('form').submit(function(){
+
+            var test = $('.contact').val();
+            alert(test);
+        });
+
+
+    });
+</script>
 @endsection
